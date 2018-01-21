@@ -16,6 +16,17 @@ import {
 } from 'react-native';
 
 export default class App extends Component<{}> {
+
+  componentDidMount() {
+    const geminiApiCaller = new GeminiApiCaller(config.geminiApiKey, config.secret);
+    geminiApiCaller.getAvailableBalance().then(balances => {
+      console.log(balances);
+    });
+    geminiApiCaller.getTickerBySymbol('ethusd').then(ticker => {
+      console.log(ticker);
+    });
+  }
+
   render() {
     return (
       <NavigatorIOS

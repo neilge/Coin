@@ -5,10 +5,12 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "post-install": "./node_modules/.bin/rn-nodeify --install crypto --hack"
+    "post-install": "./node_modules/.bin/rn-nodeify --install crypto --hack",
+    "flow": "flow"
   },
   "dependencies": {
     "assert": "^1.4.1",
+    "babel-preset-flow": "^6.23.0",
     "browserify-zlib": "^0.1.4",
     "console-browserify": "^1.1.0",
     "constants-browserify": "^1.0.0",
@@ -20,14 +22,14 @@
     "process": "^0.11.10",
     "querystring-es3": "^0.2.1",
     "react": "16.0.0",
-    "react-native": "0.50.4",
+    "react-native": "0.51.0",
     "react-native-crypto": "^2.1.1",
     "react-native-http": "github:tradle/react-native-http#834492d",
     "react-native-level-fs": "^3.0.0",
     "react-native-os": "^1.1.0",
     "react-native-randombytes": "^3.0.0",
     "react-native-tcp": "^3.3.0",
-    "react-native-udp": "^2.3.0",
+    "react-native-udp": "^2.3.1",
     "readable-stream": "^1.0.33",
     "stream-browserify": "^1.0.0",
     "timers-browserify": "^1.4.2",
@@ -41,16 +43,17 @@
     "babel-preset-react-native": "4.0.0",
     "jest": "21.2.1",
     "react-test-renderer": "16.0.0",
-    "rn-nodeify": "github:mvayngrib/rn-nodeify"
+    "rn-nodeify": "github:mvayngrib/rn-nodeify",
+    "flow-bin": "^0.56.0"
   },
   "jest": {
     "preset": "react-native"
   },
   "react-native": {
+    "crypto": "react-native-crypto",
     "zlib": "browserify-zlib",
     "console": "console-browserify",
     "constants": "constants-browserify",
-    "crypto": "react-native-crypto",
     "dns": "dns.js",
     "net": "react-native-tcp",
     "domain": "domain-browser",
@@ -73,10 +76,10 @@
     "tls": false
   },
   "browser": {
+    "crypto": "react-native-crypto",
     "zlib": "browserify-zlib",
     "console": "console-browserify",
     "constants": "constants-browserify",
-    "crypto": "react-native-crypto",
     "dns": "dns.js",
     "net": "react-native-tcp",
     "domain": "domain-browser",

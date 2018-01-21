@@ -1,3 +1,4 @@
+/* global fetch:false */
 {
-  "presets": ["react-native"]
+  "presets": ["react-native", "flow"]
 }
